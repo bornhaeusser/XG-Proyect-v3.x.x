@@ -1,3 +1,9 @@
+<p align="center"
+    <a href="http://www.xgproyect.org/" target="_blank">
+        <img align="center" src="http://www.xgproyect.org/images/misc/xg-logo.png" title="XG Proyect" alt="xgp-logo">
+    </a>
+</p> 
+
 XG Proyect
 ====
 
@@ -8,7 +14,7 @@ Live Server: http://server.xgproyect.org/
 Require PHP >= 5.5  
 Require MySQL >= 5.5  
 
-![xgproyect](http://www.xgproyect.org/images/misc/xg-logo.png)
+![Free](http://www.gnu.org/graphics/agplv3-155x51.png)
 
 ## How to get XG Proyect?
 

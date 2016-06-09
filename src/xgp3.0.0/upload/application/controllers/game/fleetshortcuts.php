@@ -48,11 +48,14 @@ class Fleetshortcuts extends XGPCore
         // Check module access
         FunctionsLib::moduleMessage(FunctionsLib::isModuleAccesible(self::MODULE_ID));
 
-        $this->_current_user = parent::$users->getUserData();
-
+        $this->_current_user    = parent::$users->getUserData();
+        $this->_lang            = parent::$lang;
+        
         if (!OfficiersLib::isOfficierActive($this->_current_user['premium_officier_commander'])) {
+
             FunctionsLib::redirect('game.php?page=officier');
         } else {
+
             $this->build_page();
         }
     }
@@ -166,11 +169,13 @@ class Fleetshortcuts extends XGPCore
         $parse = $this->_lang;
 
         if ($this->_current_user['user_fleet_shortcuts']) {
-            $scarray = explode(";", $this->_current_user['user_fleet_shortcuts']);
-            $sx = true;
-            $e = 0;
-            $ShortcutsRowTPL = parent::$page->getTemplate("shortcuts/shortcuts_row");
 
+            $scarray                = explode(";", $this->_current_user['user_fleet_shortcuts']);
+            $sx                     = true;
+            $e                      = 0;
+            $ShortcutsRowTPL        = parent::$page->getTemplate("shortcuts/shortcuts_row");
+            $parse['block_rows']    = '';
+            
             foreach ($scarray as $a => $b) {
                 if (!empty($b)) {
                     $c = explode(',', $b);
